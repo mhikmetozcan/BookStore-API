@@ -5,6 +5,8 @@ import static io.restassured.RestAssured.*;
 
 import io.cucumber.java.Before;
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import org.junit.BeforeClass;
 import org.openqa.selenium.support.PageFactory;
 
@@ -13,6 +15,7 @@ public abstract class TestBase {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+   public static Response response;
    public final String apiGenerateToken = "/Account/v1/GenerateToken";
    public final String apiLogin = "/Account/v1/Login";
    public final String apiAuthorized = "/Account/v1/Authorized";
@@ -23,6 +26,8 @@ public abstract class TestBase {
    public final String uiProfile = "/profile";
    public final String uiBooks = "/books";
 
-
+    public Response sendPostRequest(){
+        return response;
+    }
 
 }

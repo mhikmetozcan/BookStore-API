@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 public class PostNewUserWithAPI extends TestBase{
 
-    public Response response;
+
     File outFile = new File(ConfigurationReader.getProperty("filePath"));
     PrintWriter output;
     String userID;
@@ -25,6 +25,7 @@ public class PostNewUserWithAPI extends TestBase{
         return newUser;
     }
 
+    @Override
     public Response sendPostRequest(){
       response =  RestAssured.given().accept(ContentType.JSON)
                 .and().contentType(ContentType.JSON)

@@ -1,7 +1,7 @@
 Feature: Creating a user for the bookstore via API and verify the frontend
 
   Scenario: Creating a new user using POST request via API
-    When user sends POST request to apiUSER endpoint
+    When user sends POST request to "apiUSER" endpoint
     Then Status code is 201
     And userID captured and verified
     And userName is correct
