@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class PostNewUserWithAPI extends TestBase{
 
 
-    File outFile = new File(ConfigurationReader.getProperty("filePath"));
+    File outFile = new File(ConfigurationReader.getProperty("filePathUserId"));
     PrintWriter output;
     String userID;
 

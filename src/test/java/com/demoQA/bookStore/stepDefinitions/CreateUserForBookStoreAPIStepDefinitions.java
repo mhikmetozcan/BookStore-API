@@ -21,7 +21,6 @@ public class CreateUserForBookStoreAPIStepDefinitions {
     ButtonGenerator buttonGenerator = new ButtonGenerator();
     ProfilePage profilePage = new ProfilePage();
     EndPointGenerator endPointGenerator = new EndPointGenerator();
-GenerateToken generateToken = new GenerateToken();
 
     @When("user sends POST request to {string} endpoint")
     public void user_sends_post_request_to_endpoint(String endPoint) {

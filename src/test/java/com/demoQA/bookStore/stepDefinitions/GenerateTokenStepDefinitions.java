@@ -6,6 +6,7 @@ import io.cucumber.java.en.When;
 import io.restassured.RestAssured;
 import org.junit.Assert;
 
+import java.io.FileNotFoundException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -20,7 +21,8 @@ public class GenerateTokenStepDefinitions {
     String date;
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     @When("Token and expiry date are captured")
-    public void token_and_expiry_date_are_captured(){
+    public void token_and_expiry_date_are_captured() throws FileNotFoundException {
+        generateToken.captureUserTokenAndWriteItOnAFile();
         generateToken.response.prettyPrint();
         token = generateToken.response.body().path("token");
         date = generateToken.response.body().path("expires").toString().substring(0, 10);
