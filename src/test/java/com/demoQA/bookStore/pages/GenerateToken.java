@@ -45,7 +45,7 @@ public class GenerateToken extends TestBase{
         output.close();
     }
 
-    public String getUserID() throws FileNotFoundException {
+    public String getUserToken() throws FileNotFoundException {
         Scanner s = new Scanner(outFile);
         return s.next();
     }

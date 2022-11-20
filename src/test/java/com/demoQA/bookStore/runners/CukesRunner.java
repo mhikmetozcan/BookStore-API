@@ -16,8 +16,8 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/java/resources/features",
         glue = "com/demoQA/bookStore/stepDefinitions",
-        dryRun = true,
-        tags = ""
+        dryRun = false,
+        tags = "@wip"
 )
 
 

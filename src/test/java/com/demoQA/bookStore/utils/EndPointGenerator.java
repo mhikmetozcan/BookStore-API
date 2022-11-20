@@ -1,15 +1,13 @@
 package com.demoQA.bookStore.utils;
 
-import com.demoQA.bookStore.pages.GenerateToken;
-import com.demoQA.bookStore.pages.LogInPage;
-import com.demoQA.bookStore.pages.PostNewUserWithAPI;
-import com.demoQA.bookStore.pages.TestBase;
+import com.demoQA.bookStore.pages.*;
 import io.restassured.response.Response;
 
 public class EndPointGenerator {
 
     PostNewUserWithAPI postNewUserWithAPI = new PostNewUserWithAPI();
     GenerateToken generateToken = new GenerateToken();
+    AddBookToUser addBookToUser = new AddBookToUser();
 
     /**
      * Is used for reaching any endpoint with a single step definition
@@ -24,9 +22,9 @@ public class EndPointGenerator {
             case "apiGenerateToken":
                 generateToken.response = generateToken.sendPostRequest();
                 return generateToken.response;
-            case "yet another button":
-
-                break;
+            case "apiAddBook":
+                addBookToUser.response = addBookToUser.sendPostRequest();
+                return addBookToUser.response;
         }
 
         return TestBase.response;
@@ -42,6 +40,9 @@ public class EndPointGenerator {
         if(generateToken == null){
             generateToken = new GenerateToken();
         }
+        if(addBookToUser == null){
+            addBookToUser = new AddBookToUser();
+        }
 
     }
 
@@ -51,6 +52,7 @@ public class EndPointGenerator {
     public void resetObject(){
         postNewUserWithAPI = null;
         generateToken = null;
+        addBookToUser = null;
     }
 
     /**
