@@ -12,7 +12,8 @@ public class AddingBookToUserAccountStepDefinitions {
 
     @And("ISBN exist in the response body")
     public void isbnExistInTheResponseBody() {
-        Assert.assertEquals( "9781449337711",  addBookToUser.response.body().path("books.isbn").toString().substring(1,14));
         addBookToUser.response.prettyPrint();
+        Assert.assertEquals( "9781449331818",  addBookToUser.response.body().path("books[0].isbn"));
+     //   addBookToUser.response.prettyPrint();
     }
 }

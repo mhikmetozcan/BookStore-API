@@ -20,13 +20,17 @@ public abstract class TestBase {
    public final String apiLogin = "/Account/v1/Login";
    public final String apiAuthorized = "/Account/v1/Authorized";
    public final String apiUser = "/Account/v1/User";
-   public final String apiGetUser = "/Account/v1/User/UUID";
+   public final String apiGetUser = "/Account/v1/User";
    public final String apiAddBook = "/BookStore/v1/Books";
    public final String uiLogin = "/login";
    public final String uiProfile = "/profile";
    public final String uiBooks = "/books";
 
     public Response sendPostRequest(){
+        return response;
+    }
+
+    public Response sendGetRequest(){
         return response;
     }
 

@@ -19,7 +19,7 @@ public class AddBookToUser extends TestBase{
         Map<String, Object> book = new HashMap<>();
         book.put("userId", postNewUserWithAPI.getUserID());
         Map<String,String> isbns= new HashMap<>();
-        isbns.put("isbn", "9781449337711");
+        isbns.put("isbn", "9781449331818");
         List<Map> listOfIsbns = new ArrayList<>();
         listOfIsbns.add(isbns);
         book.put("collectionOfIsbns",listOfIsbns);

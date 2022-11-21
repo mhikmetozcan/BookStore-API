@@ -42,7 +42,7 @@ public class CreateUserForBookStoreAPIStepDefinitions {
     }
     @Given("user navigates to login page")
     public void userNavigatesToLoginPage() {
-        Driver.getDriver().get("https://demoqa.com/login");
+        Driver.getDriver().get(ConfigurationReader.getProperty("logInPageURL"));
     }
     @When("user enters login credentials")
     public void userEntersLoginCredentials() {
